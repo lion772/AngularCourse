@@ -1,3 +1,8 @@
+<!--<input type="text" (input)="onInputData($event)" /> -->
+<!-- [(ngModel)] will trigger on the input event and update the value
+   of the variable in our component automatically -->
+<input type="text" [(ngModel)]="serverName" />
+<p>{{ serverName }}</p>
 <button
   class="btn btn-primary"
   (click)="onCreateServer($event)"
