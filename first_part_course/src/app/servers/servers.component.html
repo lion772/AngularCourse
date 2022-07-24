@@ -1,8 +1,11 @@
 <button
   class="btn btn-primary"
-  (submit)="(onSubmit)"
+  (click)="onCreateServer($event)"
   [disabled]="!allowNewServer"
 >
   Create Server
 </button>
+<p>{{ allowNewServer }}</p>
+<p [innerText]="allowNewServer"></p>
+<p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
