@@ -2,7 +2,6 @@
 <!-- [(ngModel)] will trigger on the input event and update the value
    of the variable in our component automatically -->
 <input type="text" [(ngModel)]="serverName" />
-<p>{{ serverName }}</p>
 <button
   class="btn btn-primary"
   (click)="onCreateServer($event)"
@@ -13,4 +12,18 @@
 <p>{{ allowNewServer }}</p>
 <p [innerText]="allowNewServer"></p>
 <p>{{ serverCreationStatus }}</p>
+<p *ngIf="allowDisplayServerName">{{ serverName }}</p>
+
+<hr />
+
+<input type="text" [(ngModel)]="username" />
+<p>{{ username }}</p>
+<button
+  class="btn btn-primary"
+  [disabled]="!username"
+  (click)="onResetUsername()"
+>
+  Click to reset username
+</button>
+
 <app-server></app-server>
