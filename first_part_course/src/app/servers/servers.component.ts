@@ -10,6 +10,7 @@ export class ServersComponent implements OnInit {
   allowDisplayServerName: boolean = false;
   serverCreationStatus: string = 'No server has been created!';
   serverName: string = '';
+  serverCreated: boolean = false;
 
   //Exercise
   username: string = '';
@@ -25,6 +26,7 @@ export class ServersComponent implements OnInit {
 
   onCreateServer(event: Event): void {
     this.allowDisplayServerName = true;
+    this.serverCreated = true;
     this.serverCreationStatus = `A new server is available! its name is ${this.serverName}`;
     console.log(this.serverCreationStatus, event);
   }
