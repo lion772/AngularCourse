@@ -1,4 +1,4 @@
-<p>
-  server works! Server is {{ getServerStatus() }}, whose ID is
+<p [ngStyle]="{ backgroundColor: checkServerStatus() }">
+  Server is {{ getServerStatus() }}, whose ID is
   {{ serverId }}
 </p>
