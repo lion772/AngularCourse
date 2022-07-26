@@ -29,4 +29,33 @@
   Click to reset username
 </button>
 
-<app-server></app-server>
+<!-- <p *ngFor="let server of servers">
+  {{ server }}
+  <app-server></app-server>
+</p> -->
+
+<br />
+<p [ngClass]="{ hidden: hideServer === true }">Abacate</p>
+<button
+  *ngIf="hideServer === false; else showServer"
+  class="btn btn-primary"
+  (click)="onHideAbacate()"
+>
+  Hide Abacate
+</button>
+
+<ng-template #showServer>
+  <button class="btn btn-primary" (click)="onHideAbacate()">
+    Show Abacate
+  </button>
+</ng-template>
+
+<div
+  *ngFor="let counter of counterList"
+  [ngClass]="{ color: counter >= 5 }"
+  [ngStyle]="{ backgroundColor: counter >= 5 ? 'green' : 'transparent' }"
+>
+  <p>
+    {{ counter }}
+  </p>
+</div>
