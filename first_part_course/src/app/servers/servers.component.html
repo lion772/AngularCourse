@@ -51,9 +51,9 @@
 </ng-template>
 
 <div
-  *ngFor="let counter of counterList"
-  [ngClass]="{ color: counter >= 5 }"
-  [ngStyle]="{ backgroundColor: counter >= 5 ? 'green' : 'transparent' }"
+  *ngFor="let counter of counterList; let i = index"
+  [ngClass]="{ color: i >= 5 }"
+  [ngStyle]="{ backgroundColor: i >= 5 ? 'green' : 'transparent' }"
 >
   <p>
     {{ counter }}

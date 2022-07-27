@@ -19,7 +19,7 @@ export class ServersComponent implements OnInit {
   ];
   hideServer: boolean = true;
   counter: number = 0;
-  counterList: Array<number> = [];
+  counterList: Array<Date> = [];
 
   //Exercise
   username: string = '';
@@ -51,6 +51,6 @@ export class ServersComponent implements OnInit {
   onHideAbacate() {
     this.hideServer = !this.hideServer;
     this.counter += 1;
-    this.counterList.push(this.counter);
+    this.counterList.push(new Date());
   }
 }
