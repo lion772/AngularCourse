@@ -1,9 +1,12 @@
 <div class="container">
-  <app-cockpit [serverElements]="serverElements"></app-cockpit>
+  <app-cockpit
+    (buttonClicked)="parentEventHandlerFunction($event)"
+  ></app-cockpit>
   <hr />
   <div class="row">
     <div class="col-xs-12">
       <app-server-element
+        (buttonClickedEvent)="parentEventHandlerFunction($event)"
         *ngFor="let serverElement of serverElements"
         [srvElement]="serverElement"
       ></app-server-element>
