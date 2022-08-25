@@ -1,3 +1,6 @@
-<app-header></app-header>
-<app-recipes></app-recipes>
-<app-shopping-list></app-shopping-list>
+<app-header
+  (displayRecipeOrShoppingListener)="displaySectionHandler($event)"
+></app-header>
+
+<app-recipes *ngIf="showRecipe"></app-recipes>
+<app-shopping-list *ngIf="showShoppingList"></app-shopping-list>
