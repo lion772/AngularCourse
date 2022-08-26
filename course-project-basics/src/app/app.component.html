@@ -5,4 +5,6 @@
 <app-recipes *ngIf="showRecipe"></app-recipes>
 <app-shopping-list *ngIf="showShoppingList"></app-shopping-list>
 
-<p appBetterHighlight>olha eu ai de novo!</p>
+<p appBetterHighlight defaultColor="orange" [highlightColor]="'red'">
+  olha eu ai de novo!
+</p>
