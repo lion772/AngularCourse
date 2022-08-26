@@ -8,6 +8,23 @@
 <!-- You may either set Property binding to an element by typing the name of the directive's property equal
    to a string enclosed in double quotation marks, or by typing the property enclosed in square brackets equal
    to a string sorrounded by double and single quotation marks.   -->
-<p appBetterHighlight defaultColor="orange" [highlightColor]="'red'">
-  olha eu ai de novo!
+<p
+  (click)="toggle = !toggle"
+  *appUnless="toggle"
+  defaultColor="orange"
+  [highlightColor]="'red'"
+  [ngStyle]="{ backgroundColor: !toggle ? 'red' : 'blue' }"
+>
+  I'm gonna disappear if you click me!
 </p>
+
+<p appBetterHighlight defaultColor="orange" [highlightColor]="'red'">
+  I'll switch between 2 different colors every hover!
+</p>
+
+<div [ngSwitch]="value">
+  <p *ngSwitchCase="5">Value is 5</p>
+  <p *ngSwitchCase="10">Value is 10</p>
+  <p *ngSwitchCase="15">Value is 15</p>
+  <p *ngSwitchDefault>Value is Default</p>
+</div>

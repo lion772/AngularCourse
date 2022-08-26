@@ -9,6 +9,8 @@ export class AppComponent {
   title = 'course-project-basics';
   showRecipe: boolean = true;
   showShoppingList: boolean = false;
+  toggle = false;
+  value: number = 10;
 
   displaySectionHandler(eventEmitter) {
     if (eventEmitter.isRecipes) {
