@@ -10,8 +10,9 @@ import { ServersService } from "../servers.service";
 })
 export class EditServerComponent implements OnInit {
   server: { id: number; name: string; status: string };
-  serverName = "";
-  serverStatus = "";
+  serverName: string = "";
+  serverStatus: string = "";
+  allowEdit: boolean = false;
 
   constructor(
     private serversService: ServersService,
@@ -22,7 +23,9 @@ export class EditServerComponent implements OnInit {
     //snapshot is not reactive to any changes after this component has loaded, if you want a asynchronous way to
     //deal with that, you rather use 'subscribe'
     console.log(this.route.snapshot.queryParams);
-    this.route.params.subscribe((params: Params) => {});
+    this.route.queryParams.subscribe((params: Params) => {
+      this.allowEdit = params["allowEdit"] === "1" ? true : false;
+    });
     this.server = this.serversService.getServer(1);
     this.serverName = this.server.name;
     this.serverStatus = this.server.status;
