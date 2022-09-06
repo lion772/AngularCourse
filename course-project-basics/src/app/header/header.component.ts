@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -9,26 +9,7 @@ export class HeaderComponent implements OnInit {
   collapsed: boolean = true;
   toggle: boolean = false;
 
-  @Output() displayRecipeOrShoppingListener = new EventEmitter<{
-    isShoppingList: boolean;
-    isRecipes: boolean;
-  }>();
-
   constructor() {}
 
-  ngOnInit(): void {}
-
-  onRecipeClicked() {
-    this.displayRecipeOrShoppingListener.emit({
-      isRecipes: true,
-      isShoppingList: false,
-    });
-  }
-
-  onShoppingClicked() {
-    this.displayRecipeOrShoppingListener.emit({
-      isRecipes: false,
-      isShoppingList: true,
-    });
-  }
+  ngOnInit() {}
 }
