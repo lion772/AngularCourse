@@ -1,9 +1,13 @@
 <app-header
   (displayRecipeOrShoppingListener)="displaySectionHandler($event)"
 ></app-header>
-
-<app-recipes *ngIf="showRecipe"></app-recipes>
-<app-shopping-list *ngIf="showShoppingList"></app-shopping-list>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
 
 <!-- You may either set Property binding to an element by typing the name of the directive's property equal
    to a string enclosed in double quotation marks, or by typing the property enclosed in square brackets equal
